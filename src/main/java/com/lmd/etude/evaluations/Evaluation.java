@@ -8,6 +8,7 @@ package com.lmd.etude.evaluations;
 import com.lmd.etude.inscriptions.UniteEnseignement;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -21,6 +22,7 @@ public class Evaluation implements Serializable {
     private Date date;
     private TypeEvaluation typeEvaluation;
     private UniteEnseignement uniteEnseignement;
+    private List<Note> notes;
 
     public Evaluation() {
     }

@@ -5,6 +5,7 @@
  */
 package com.lmd.etude.evaluations;
 
+import com.lmd.etude.inscriptions.UEchoisie;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,7 @@ public class Note implements Serializable{
     private Long id;
     private Float noteObtenue;
     private Evaluation evalutation;
+    private UEchoisie uechoisie;
     private List<Erreurs> erreurs;
 
     public Note() {
@@ -27,6 +29,14 @@ public class Note implements Serializable{
         this.id = id;
         this.noteObtenue = noteObtenue;
         this.evalutation = evalutation;
+        this.erreurs = erreurs;
+    }
+
+    public Note(Long id, Float noteObtenue, Evaluation evalutation, UEchoisie uechoisie, List<Erreurs> erreurs) {
+        this.id = id;
+        this.noteObtenue = noteObtenue;
+        this.evalutation = evalutation;
+        this.uechoisie = uechoisie;
         this.erreurs = erreurs;
     }
 
@@ -60,6 +70,14 @@ public class Note implements Serializable{
 
     public void setErreurs(List<Erreurs> erreurs) {
         this.erreurs = erreurs;
+    }
+
+    public UEchoisie getUechoisie() {
+        return uechoisie;
+    }
+
+    public void setUechoisie(UEchoisie uechoisie) {
+        this.uechoisie = uechoisie;
     }
 
     @Override

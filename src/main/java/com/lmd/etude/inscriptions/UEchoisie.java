@@ -6,6 +6,7 @@
 package com.lmd.etude.inscriptions;
 
 import com.lmd.etude.deliberation.Decision;
+import com.lmd.etude.evaluations.Note;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,8 @@ public class UEchoisie implements Serializable {
      private List<Inscription> inscriptions;
      private HashMap<Inscription,UniteEnseignement> ueinscrits;
      private List<Decision> decisions;
+     private List<Note> notes;
+
 
     public UEchoisie() {
     }
@@ -31,6 +34,15 @@ public class UEchoisie implements Serializable {
         this.inscriptions = inscriptions;
         this.ueinscrits = ueinscrits;
         this.decisions = decisions;
+    }
+
+    public UEchoisie(boolean validee, List<UniteEnseignement> uniteEnseignements, List<Inscription> inscriptions, HashMap<Inscription, UniteEnseignement> ueinscrits, List<Decision> decisions, List<Note> notes) {
+        this.validee = validee;
+        this.uniteEnseignements = uniteEnseignements;
+        this.inscriptions = inscriptions;
+        this.ueinscrits = ueinscrits;
+        this.decisions = decisions;
+        this.notes = notes;
     }
 
     public boolean isValidee() {
@@ -71,6 +83,14 @@ public class UEchoisie implements Serializable {
 
     public void setDecisions(List<Decision> decisions) {
         this.decisions = decisions;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
     @Override
