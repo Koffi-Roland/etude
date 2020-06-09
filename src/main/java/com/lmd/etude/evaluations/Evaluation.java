@@ -23,6 +23,7 @@ public class Evaluation implements Serializable {
     private TypeEvaluation typeEvaluation;
     private UniteEnseignement uniteEnseignement;
     private List<Note> notes;
+    private Indice  indice;
 
     public Evaluation() {
     }
@@ -43,6 +44,15 @@ public class Evaluation implements Serializable {
         this.date = date;
         this.typeEvaluation = typeEvaluation;
         this.uniteEnseignement = uniteEnseignement;
+    }
+
+    public Evaluation(Long id, Date date, TypeEvaluation typeEvaluation, UniteEnseignement uniteEnseignement, List<Note> notes, Indice indice) {
+        this.id = id;
+        this.date = date;
+        this.typeEvaluation = typeEvaluation;
+        this.uniteEnseignement = uniteEnseignement;
+        this.notes = notes;
+        this.indice = indice;
     }
 
     public Long getId() {
@@ -75,6 +85,22 @@ public class Evaluation implements Serializable {
 
     public void setUniteEnseignement(UniteEnseignement uniteEnseignement) {
         this.uniteEnseignement = uniteEnseignement;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+
+    public Indice getIndice() {
+        return indice;
+    }
+
+    public void setIndice(Indice indice) {
+        this.indice = indice;
     }
 
     @Override

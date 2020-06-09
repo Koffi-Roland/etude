@@ -18,6 +18,7 @@ public class Indice implements Serializable {
     private Long id;
     private String libelle;
     private Float value;
+    private Evaluation evaluation;
 
     public Indice() {
     }
@@ -27,6 +28,14 @@ public class Indice implements Serializable {
         this.libelle = libelle;
         this.value = value;
     }
+
+    public Indice(Long id, String libelle, Float value, Evaluation evaluation) {
+        this.id = id;
+        this.libelle = libelle;
+        this.value = value;
+        this.evaluation = evaluation;
+    }
+    
 
     public Long getId() {
         return id;
@@ -50,6 +59,14 @@ public class Indice implements Serializable {
 
     public void setValue(Float value) {
         this.value = value;
+    }
+
+    public Evaluation getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(Evaluation evaluation) {
+        this.evaluation = evaluation;
     }
 
     @Override

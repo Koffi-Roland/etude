@@ -6,6 +6,7 @@
 package com.lmd.etude.evaluations;
 
 import com.lmd.etude.inscriptions.UEchoisie;
+import com.lmd.etude.interfaces.ICalculMoyenne;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.Objects;
  *
  * @author HP
  */
-public class Note implements Serializable{
+public class Note implements Serializable,ICalculMoyenne {
     
     private Long id;
     private Float noteObtenue;
@@ -113,6 +114,11 @@ public class Note implements Serializable{
         }
         return Objects.equals(this.erreurs, other.erreurs);
     }
+
+    @Override
+    public Float calculMoyenne(Evaluation evaluation) {
+    return evaluation.getIndice().getValue()* noteObtenue;
+        }
     
     
 }
